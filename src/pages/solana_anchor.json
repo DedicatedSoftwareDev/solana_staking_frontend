@@ -1,0 +1,879 @@
+{
+  "version": "0.1.0",
+  "name": "solana_anchor",
+  "instructions": [
+    {
+      "name": "initPool",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rand",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "soulsMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "bump",
+          "type": "u8"
+        },
+        {
+          "name": "stakingPeriod",
+          "type": "i64"
+        },
+        {
+          "name": "withdrawPeriod",
+          "type": "i64"
+        },
+        {
+          "name": "hvhPercent",
+          "type": "u64"
+        },
+        {
+          "name": "soldierPercent",
+          "type": "u64"
+        },
+        {
+          "name": "winPercent",
+          "type": "u64"
+        },
+        {
+          "name": "losePercent",
+          "type": "u64"
+        },
+        {
+          "name": "burnPercent",
+          "type": "u64"
+        },
+        {
+          "name": "winTeamStake",
+          "type": "u64"
+        },
+        {
+          "name": "lostTeamStake",
+          "type": "u64"
+        },
+        {
+          "name": "tokenUnit",
+          "type": "u64"
+        },
+        {
+          "name": "soulAmount",
+          "type": "u64"
+        },
+        {
+          "name": "hvhSymbol",
+          "type": "string"
+        },
+        {
+          "name": "soldierSymbol",
+          "type": "string"
+        },
+        {
+          "name": "tokenHalos",
+          "type": "string"
+        },
+        {
+          "name": "tokenHorns",
+          "type": "string"
+        },
+        {
+          "name": "startTime",
+          "type": "i64"
+        },
+        {
+          "name": "period",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "initStakeState",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "soulsMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "stakeState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "bump",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "initHvhData",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "hvhData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "bump",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "initSoldierData",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "soldierData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "bump",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "stakehvh",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "hvhData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakeState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "metadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceNftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destNftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceSoulsAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destSoulsAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "hvhIdentity",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "stakesoldiers",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "soldierData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakeState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "metadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceNftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destNftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceSoulsAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destSoulsAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "hvhIdentity",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "unstakehvh",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "hvhData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakeState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "metadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceNftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destNftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "hvhIdentity",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "unstakesoldier",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "soldierData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakeState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "metadata",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceNftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destNftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "claim",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakeState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "destSoulsAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sourceSoulsAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "burnSoulsAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Pool",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "rand",
+            "type": "publicKey"
+          },
+          {
+            "name": "soulsMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "totalSouls",
+            "type": "u64"
+          },
+          {
+            "name": "stakingPeriod",
+            "type": "i64"
+          },
+          {
+            "name": "withdrawPeriod",
+            "type": "i64"
+          },
+          {
+            "name": "halosCount",
+            "type": "u64"
+          },
+          {
+            "name": "hornsCount",
+            "type": "u64"
+          },
+          {
+            "name": "soldierHalosCount",
+            "type": "u64"
+          },
+          {
+            "name": "soldierHornsCount",
+            "type": "u64"
+          },
+          {
+            "name": "prevWin",
+            "type": "u8"
+          },
+          {
+            "name": "winTeamStake",
+            "type": "u64"
+          },
+          {
+            "name": "lostTeamStake",
+            "type": "u64"
+          },
+          {
+            "name": "soulAmount",
+            "type": "u64"
+          },
+          {
+            "name": "hvhPercent",
+            "type": "u64"
+          },
+          {
+            "name": "soldierPercent",
+            "type": "u64"
+          },
+          {
+            "name": "burnPercent",
+            "type": "u64"
+          },
+          {
+            "name": "winPercent",
+            "type": "u64"
+          },
+          {
+            "name": "losePercent",
+            "type": "u64"
+          },
+          {
+            "name": "startTime",
+            "type": "i64"
+          },
+          {
+            "name": "tokenUnit",
+            "type": "u64"
+          },
+          {
+            "name": "period",
+            "type": "i64"
+          },
+          {
+            "name": "hvhSymbol",
+            "type": "string"
+          },
+          {
+            "name": "soldierSymbol",
+            "type": "string"
+          },
+          {
+            "name": "tokenHalos",
+            "type": "string"
+          },
+          {
+            "name": "tokenHorns",
+            "type": "string"
+          },
+          {
+            "name": "burned",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StakeState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "pool",
+            "type": "publicKey"
+          },
+          {
+            "name": "halosCount",
+            "type": "u64"
+          },
+          {
+            "name": "hornsCount",
+            "type": "u64"
+          },
+          {
+            "name": "soldierHalosCount",
+            "type": "u64"
+          },
+          {
+            "name": "soldierHornsCount",
+            "type": "u64"
+          },
+          {
+            "name": "lastStakeTime",
+            "type": "i64"
+          },
+          {
+            "name": "claimed",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HvHData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "pool",
+            "type": "publicKey"
+          },
+          {
+            "name": "nftMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "nftAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeTime",
+            "type": "i64"
+          },
+          {
+            "name": "unstaked",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SoldierData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "pool",
+            "type": "publicKey"
+          },
+          {
+            "name": "nftMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "nftAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeTime",
+            "type": "i64"
+          },
+          {
+            "name": "hvhStr",
+            "type": "string"
+          },
+          {
+            "name": "unstaked",
+            "type": "bool"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "TokenMintToFailed",
+      "msg": "Token mint to failed"
+    },
+    {
+      "code": 6001,
+      "name": "TokenSetAuthorityFailed",
+      "msg": "Token authority failed"
+    },
+    {
+      "code": 6002,
+      "name": "TokenTransferFailed",
+      "msg": "Token transfer failed"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidTokenAccount",
+      "msg": "Invalid token account"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidTokenMint",
+      "msg": "Invalid token mint"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidMetadata",
+      "msg": "Invalid metadata"
+    },
+    {
+      "code": 6006,
+      "name": "InvalidHvHData",
+      "msg": "Invalid HvHData account"
+    },
+    {
+      "code": 6007,
+      "name": "InvalidStakeState",
+      "msg": "Invalid stakestate account"
+    },
+    {
+      "code": 6008,
+      "name": "InvalidTime",
+      "msg": "Invalid time"
+    },
+    {
+      "code": 6009,
+      "name": "InvalidStakingPeriod",
+      "msg": "Invalid Staking Period"
+    },
+    {
+      "code": 6010,
+      "name": "InvalidWithdrawPeriod",
+      "msg": "Invalid Withdraw Period"
+    },
+    {
+      "code": 6011,
+      "name": "PassedStakingPeriod",
+      "msg": "Passed Staking Period"
+    },
+    {
+      "code": 6012,
+      "name": "WithdrawFirst",
+      "msg": "Please withdraw first"
+    },
+    {
+      "code": 6013,
+      "name": "PassedWithdrawPeriod",
+      "msg": "Passed Withdraw Period"
+    },
+    {
+      "code": 6014,
+      "name": "InvalidUnstakeTime",
+      "msg": "Invalid Unstake Time"
+    },
+    {
+      "code": 6015,
+      "name": "AlreadyUnstaked",
+      "msg": "Already unstaked"
+    },
+    {
+      "code": 6016,
+      "name": "AlreadyClaimed",
+      "msg": "Already claimed"
+    },
+    {
+      "code": 6017,
+      "name": "InvalidBurnAccount",
+      "msg": "Invalid Burn Account"
+    }
+  ]
+}

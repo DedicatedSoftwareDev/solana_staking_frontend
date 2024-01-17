@@ -1,0 +1,691 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#load_div {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background: white;
+  opacity: 0.5;
+}
+
+.row {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.loading{
+  margin: auto;
+}
+
+.mobile-nav {
+  width: 100%;
+  position: absolute;
+  float: none;
+  left: 0px;
+  top: 70px;
+  background-color: #201750;
+}
+
+.platform-label {
+  text-align: center;
+}
+
+.platform-label p {
+  color: #00E5FF;
+  font-family: "Bebas Neue";
+}
+
+.mobile-nav a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.mobile-walletconnect {
+  display: flex;
+  justify-content: center;
+}
+
+.loading_disable{
+  display: none !important;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  background-color: #261c62;
+  justify-content: center;
+  left: 0px;
+}
+
+.logo-div {
+  display: flex;
+  justify-content: center;
+}
+
+.header-link {  
+  display: flex;
+  justify-content: center;
+}
+
+.header-link a {
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  /* height: 100%; */
+  align-content: center;
+}
+
+.header-link a:hover {
+  color: white;
+}
+
+.vs-label {
+  width: 100%;
+}
+
+.wallet-connect {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.wallet-adapter-dropdown {
+  float: right !important;
+  justify-content: center;
+}
+
+.wallet-adapter-button-trigger {
+  background-color: inherit !important;
+}
+
+.wallet-adapter-button {
+  background-color: inherit !important;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.label {
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'Gill Sans';
+  margin: auto;
+  color: rgb(0, 0, 0);
+}
+
+.winteam-label {
+  font-weight: bold;
+  font-family: 'Gill Sans';
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  color: #00E5FF;
+}
+
+.time-show {
+  font-weight: bold;
+  color: #00E5FF;
+}
+
+.cur-time-show {
+  font-weight: bold;
+  font-style: italic;
+  color: #232e66;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.cur-time-show p {
+  width: auto;
+  float: right;
+}
+
+.warning-label {
+  color: #00E5FF;
+  font-weight: bold;
+  /* display: flex; */
+  /* justify-content: center; */
+  margin: auto;
+  text-align: center;
+}
+
+.menu-div a {
+  width: 100% !important;
+}
+
+.action-button {
+  font-family: "Roboto", lomo copy;
+  font-weight: 500;
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  background-color: #30D453;
+  border-style: dotted;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  padding: 15px 30px;
+
+  margin: auto;
+}
+
+.action-div {
+  text-align: center;
+}
+
+.action-all-div {
+  margin: auto;
+}
+
+.nft-div {
+  text-align: center;
+}
+
+.nft-div p {
+  color: #00E5FF;
+  font-weight: bold;
+}
+
+.nft-collection-div {
+  display: flex;
+  justify-content: center;
+}
+
+.community-label {
+  text-align: center;
+}
+
+.community-label p {
+  color: #00E5FF;
+  font-family: "Righteous", lomo copy;
+  font-weight: bold;
+}
+
+.community-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.community-icon a {
+  width: 60px;
+}
+
+.state-table {
+  color: #00E5FF;
+  /* font-family: "Righteous", lomo copy; */
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .state-div {
+    margin-top: 50px;
+  }
+
+  .action-button {
+    width : 180px !important;
+  }
+
+  .community-icon {
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+
+  .community-label {
+    margin-top: 120px;
+  }
+  
+  .community-label p {
+    font-size: 50px;
+  }
+
+  .nft-collection-div {
+    margin-top: 100px;
+  }
+  
+  .nft-collection-div img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .nft-div {
+    margin-top: 60px;
+  }
+
+  .nft-div P {
+    font-size: 40px;
+  }
+
+  .action-div {
+    height: 70px;
+    margin-top: 30px;
+  }
+
+  .action-all-div {
+    /* padding: 20px; */
+    width: 70%;
+  }
+
+  .platform-label {
+    margin-top: 80px;
+    padding-top: 0px;
+    padding-bottom: 50px;
+  }
+
+  .platform-label p {
+    font-size: 70px;
+    font-weight: bold;
+  }
+
+  .vs-label img {
+    width: 70%;
+    height: 80px;
+    margin: auto;
+  }
+
+  .vs-video {
+    margin-top: 68px;
+  }
+
+  .vs-video img{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 100px;
+  }
+
+  .empty-div {
+    height: 140px;
+  }
+
+  .menu-div {
+    display: none;
+  }
+
+  .header-link a {
+    font-size: 16px;
+  }
+
+  .wallet-connect {
+    width: 40%;
+  }
+
+  .header-link {
+    width: 40%;
+  }
+
+  .logo-div {
+    width: 40%;
+  }
+
+  .logo-img {
+    width: 105px;
+    height: 50px;
+  }
+
+  .label {
+    font-size: 50px;
+  }
+
+  .winteam-label {
+    margin-top: 30px;
+    font-size: 45px;
+  }
+
+  .time-show {
+    font-size: 26px;
+  }
+
+  .cur-time-show {
+    font-size: 20px;
+  }
+
+  .table {
+    font-size: 20px;
+    width: 60%;
+    margin: auto;
+  }
+
+  .claim-label {
+    width: 40%;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .video-style {
+    width: 70%;
+  }
+
+  .warning-label {
+    margin-top: 100px;
+    font-size: 25px;
+    width: 80%;
+  }
+
+  .warning-label p {
+    margin-top: 20px;
+  }
+
+  .stake_button {
+    padding: 8px 20px;
+    font-size: 20px;
+    width: 130px;
+    padding: 10px 0px;
+  }
+
+  .unstake_button {
+    padding: 8px 20px;
+    font-size: 20px;
+    width: 130px;
+    padding: 10px 0px;
+  }
+}
+
+@media only screen and (max-width: 574px) {
+
+  .state-div {
+    margin-top: 15px;
+  }
+
+  .action-button {
+    width : 180px !important;
+  }
+
+  .community-icon {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  .community-label {
+    margin-top: 40px;
+  }
+  
+  .community-label p {
+    font-size: 25px;
+  }
+
+  .nft-collection-div {
+    margin-top: 40px;
+  }
+  
+  .nft-collection-div img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .nft-div {
+    margin-top: 35px;
+  }
+
+  .nft-div P {
+    font-size: 30px;
+  }
+
+  .action-div {
+    height: 70px;
+    margin-top: 10px;
+  }
+
+  .action-all-div {
+    /* padding: 20px; */
+    width: 70%;
+  }
+
+  .platform-label {
+    padding-top: 0px;
+    padding-bottom: 40px;
+  }
+
+  .platform-label p {
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .vs-label img {
+    width: 100%;
+    height: 80px;
+    margin: auto;
+  }
+
+  .vs-video img{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+   .vs-video {
+    margin-top: 60px;
+  }
+
+  .empty-div {
+    height: 120px;
+  }
+
+  .wallet-adapter-dropdown {
+    float: none !important;
+  }
+
+  .menu-div {
+    display: contents;
+  }
+
+  .header-link {
+    display: none;
+  }
+
+  .wallet-connect {
+    display: none;
+  }
+
+  .logo-div {
+    width: 50px;
+  }
+
+  .logo-img {
+    width: 50px;
+    height: 35px;
+  }
+
+  .label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .winteam-label {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+  .time-show {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .cur-time-show {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .table {
+    font-size: 20px;
+    width: 99%;
+    margin: auto;
+  }
+
+  .claim-label {
+    width: 70%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .video-style {
+    width: 100%;
+  }
+
+  .warning-label {
+    margin-top: 20px;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .stake_button {
+    padding: 8px 20px;
+    font-size: 16px;
+    width: 90px;
+    padding: 10px 0px;
+  }
+
+  .unstake_button {
+    padding: 8px 20px;
+    font-size: 16px;
+    width: 90px;
+    padding: 10px 0px;
+  }
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #008CBA;;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 7px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.custom-btn {
+  vertical-align:middle;
+}
+
+.unstake_button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: rgb(238, 16, 16);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #f4814d; 
+  color: black; 
+  border: 2px solid #ffffff;
+}
+
+.unstake_button:hover {
+  background-color: #fccaba;
+  color: white;
+}
+
+.stake_button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: rgb(238, 16, 16);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #f4814d; 
+  color: black; 
+  border: 2px solid #ffffff;
+}
+
+.stake_button:hover {
+  background-color: #fccaba;
+  color: white;
+}
+
+.claim-label {
+  display: inline;
+  color: rgb(0, 0, 0);
+}
+
+.winning-video {
+  display: flex;
+  justify-content: center;
+}
+
+.video-style {
+  margin: auto;
+}
